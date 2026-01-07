@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.quiz-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    min-height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 0.5s ease-in-out;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Background Images for States */
+.start-bg { background-image: url('start.jpg'); }
+.result-bg { background-image: url('last.jpg'); }
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darkens the image for readability */
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    color: white;
+}
+
+.screen { text-align: center; }
+.hidden { display: none; }
+
+h1, h2 { margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.option-btn {
+    padding: 15px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.option-btn:hover { background: rgba(255, 255, 255, 0.3); }
+
+.option-btn.selected {
+    background: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.primary-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.primary-btn:disabled { background: #555; cursor: not-allowed; opacity: 0.5; }
